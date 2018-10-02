@@ -8,3 +8,13 @@
   height:550px;
   overflow: scroll;
 }
+
+.section {
+  height: 20%;
+padding: 0px;
+margin:0px;
+}
+
+.row {
+  margin:0;
+}
