@@ -1,3 +1,20 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+#scrollBar {
+  background-color: lightblue;
+  width: 33.3%;
+  height:550px;
+  overflow: scroll;
+}
+
+.section {
+  height: 20%;
+padding: 0px;
+margin:0px;
+}
+
+.row {
+  margin:0;
+}
