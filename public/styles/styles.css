@@ -14,7 +14,7 @@ min-height:100vh;
 #scrollBar {
  
   width: 33.3%;
-  height:700px;
+  height:800px;
   overflow: scroll;
   margin-bottom:40px;
 }
