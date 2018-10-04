@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
