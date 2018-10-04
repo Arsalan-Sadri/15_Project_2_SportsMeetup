@@ -1,3 +1,61 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  margin:10px;
+  margin-bottom:0;
+position: relative;
+min-height:100vh;
+}
+
+#scrollBar {
+ 
+  width: 33.3%;
+  height:800px;
+  overflow: scroll;
+  margin-bottom:40px;
+}
+
+.section {
+  height: 20%;
+padding: 0px;
+margin:0px;
+}
+
+.row {
+  margin:0;
+}
+
+
+.footer {
+  position: absolute;
+  /* left: 0; */
+  bottom: 0;
+  width: 100%;
+  background-color: lightcoral;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#sign-in {
+  float: left;
+}
+
+#sign-up {
+  float: right;
+}
+
+.my-navbar {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.my-login {
+  background:white;
+  padding:20px;
+ padding-bottom:35px
+  
+}
