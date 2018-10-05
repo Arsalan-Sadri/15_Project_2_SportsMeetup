@@ -24,30 +24,15 @@ $(document).ready(function() {
       
         // This function grabs todos from the database and updates the view
         function getTodos() {
-          $.get("/api/todos", function(data) {
+          $.get("/todos", function(data) {
             todos = data;
             initializeRows();
           });
         }
       
-        // This function deletes a todo when the user clicks the delete button
-        function deleteTodo(event) {
-          event.stopPropagation();
-          var id = $(this).data("id");
-          $.ajax({
-            method: "DELETE",
-            url: "/api/todos/" + id
-          }).then(getTodos);
-        }
+
       
-        // This function handles showing the input box for a user to edit a todo
-        function editTodo() {
-          var currentTodo = $(this).data("todo");
-          $(this).children().hide();
-          $(this).children("input.edit").val(currentTodo.text);
-          $(this).children("input.edit").show();
-          $(this).children("input.edit").focus();
-        }
+     
       
         // Toggles complete status
         function toggleComplete(event) {
@@ -77,17 +62,7 @@ $(document).ready(function() {
           }).then(getTodos);
         }
       
-        // This function is called whenever a todo item is in edit mode and loses focus
-        // This cancels any edits being made
-        function cancelEdit() {
-          var currentTodo = $(this).data("todo");
-          if (currentTodo) {
-            $(this).children().hide();
-            $(this).children("input.edit").val(currentTodo.text);
-            $(this).children("span").show();
-            $(this).children("button").show();
-          }
-        }
+  
       
         // This function constructs a todo-item row
         function createNewRow(todo) {
@@ -121,7 +96,7 @@ $(document).ready(function() {
             complete: false
           };
       
-          $.post("/api/display", todo, getTodos);
+          $.post("/display", todo, getTodos);
           $newItemInput.val("");
         }
       });
