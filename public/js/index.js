@@ -1,3 +1,33 @@
+$(document).ready(function() {
+
+  $("#add-btn").on("click", function (event) {
+  event.preventDefault();
+  var newLogin = {
+      first_name: $("#first_name").val().trim(),
+      last_name: $("#last_name").val().trim(),
+      email: $("#email").val().trim(),
+      password: $("#password").val().trim(),
+      password_confirm: $("#password_confirm").val().trim(),
+  };
+  
+  // Question: What does this code do??
+  $.post("/api/loginRoute", newLogin)
+      .then(function (data) {
+          console.log("index.html", data);
+          alert("Adding character...");
+      });
+});
+
+}
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
     $('.sidenav').sidenav();
   });
