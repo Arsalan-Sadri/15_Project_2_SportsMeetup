@@ -23,8 +23,8 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/eventCreateRoutes")(app);
+require("./routes/apiLoginRoutes")(app);
+require("./routes/apiCreateEventRoutes")(app);
 
 var syncOptions = { force: false };
 
