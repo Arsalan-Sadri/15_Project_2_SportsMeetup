@@ -16,7 +16,7 @@ $(document).ready(function() {
     };
 
     // Question: What does this code do??
-    $.post("/api/characters", newEvent)
+    $.post("/api/event_event", newEvent)
         .then(function (data) {
             console.log("event_event.html", data);
             alert("Adding character...");
