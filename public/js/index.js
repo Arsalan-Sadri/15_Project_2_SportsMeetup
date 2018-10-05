@@ -7,12 +7,13 @@ $(document).ready(function() {
       last_name: $("#last_name").val().trim(),
       email: $("#email").val().trim(),
       password: $("#password").val().trim(),
+      password_confirm: $("#password_confirm").val().trim(),
   };
-
+  
   // Question: What does this code do??
   $.post("/api/loginRoute", newLogin)
       .then(function (data) {
-          console.log("event_event.html", data);
+          console.log("index.html", data);
           alert("Adding character...");
       });
 });
