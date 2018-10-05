@@ -1,29 +1,29 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     $("#add-btn").on("click", function (event) {
-    event.preventDefault();
-    var newEvent = {
-        first_name: $("#first_name").val().trim(),
-        last_name: $("#last_name").val().trim(),
-        email: $("#email").val().trim(),
-        street_address: $("#street_address").val().trim(),
-        city: $("#city").val().trim(),
-        state: $("#state").val().trim(),
-        zip_code: $("#zip_code").val().trim(),
-        sport: $("#sport").val().trim(),
-        event_name: $("#event_name").val().trim(),
-        textarea2: $("#textarea2").val().trim(),
-    };
+        event.preventDefault();
+        var newEvent = {
+            first_name: $("#first_name").val().trim(),
+            last_name: $("#last_name").val().trim(),
+            email: $("#email").val().trim(),
+            street_address: $("#street_address").val().trim(),
+            city: $("#city").val().trim(),
+            state: $("#state").val().trim(),
+            zip_code: $("#zip_code").val().trim(),
+            sport: $("#sport").val().trim(),
+            event_name: $("#event_name").val().trim(),
+            textarea2: $("#textarea2").val().trim(),
+        };
 
-    // Question: What does this code do??
-    $.post("/api/event_event", newEvent)
-        .then(function (data) {
-            console.log("event_event.html", data);
-            alert("Adding character...");
-        });
+        // Question: What does this code do??
+        $.post("/api/event_event", newEvent)
+            .then(function (data) {
+                console.log("event_event.html", data);
+                alert("Adding character...");
+            });
+    });
+
 });
-
-}
 
 
 
