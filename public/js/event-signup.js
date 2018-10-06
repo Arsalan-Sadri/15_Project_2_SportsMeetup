@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
-        var event = {
+        var newEvent = {
             // firstName: $("#first-name").val().trim(),
             // lastName: $("#last-name").val().trim(),
             // email: $("#email").val().trim(),
@@ -16,7 +16,7 @@ $(document).ready(function () {
             spots: $("#spots").val().trim()
         };
 
-        $.post("/create-event", event)
+        $.post("/create-event", newEvent)
             .then(function (data) {
 
             });
