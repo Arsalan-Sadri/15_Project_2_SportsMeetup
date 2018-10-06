@@ -112,13 +112,19 @@ button {
       color: gray;
     }
 
-    @media (max-width: 991px) {
-      .inner {
-        min-width: 768px; } }
-    @media (max-width: 767px) {
-      .inner {
-        min-width: auto;
-        background: none;
-        padding-top: 0;
-        padding-bottom: 0; }
-    
+      
+  @media (max-width: 991px) {
+    .inner {
+      min-width: 768px; } }
+  @media (max-width: 767px) {
+    .inner {
+      min-width: auto;
+      background: none;
+      padding-top: 0;
+      padding-bottom: 0; }
+  
+    form {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px; } }
+  
