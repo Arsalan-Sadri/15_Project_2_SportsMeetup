@@ -1,25 +1,68 @@
-// Dependencies
-// =============================================================
+module.exports = function (sequelize, DataTypes) {
+    var EventM = sequelize.define("EventM", {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            len: [1]
+        },
+        streetAdd: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        state: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        zipCode: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        spots: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        }
+    });
 
-// This may be confusing but here Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var database = require("../config/connection.js");
+    EventM.associate = function (models) {
+        EventM.belongsTo(models.UserM, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
-
-var EventM = database.define("event", {
-    name: Sequelize.STRING,
-    description: Sequelize.STRING,
-    streetAdd: Sequelize.STRING,
-    city: Sequelize.STRING,
-    state: Sequelize.STRING,
-    zipCode: Sequelize.INTEGER,
-    category: Sequelize.STRING,
-    spots: Sequelize.INTEGER
-});
-
-// Syncs with DB
-EventM.sync();
-
-// Makes the Chirp Model available for other files (will also create a table)
-module.exports = EventM;
+    return EventM;
+};

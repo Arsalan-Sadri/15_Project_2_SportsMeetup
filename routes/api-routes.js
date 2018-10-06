@@ -1,4 +1,4 @@
-var EventM = require("../models/event-model");
+var db = require("../models");
 
 module.exports = function (app) {
 
@@ -6,10 +6,9 @@ module.exports = function (app) {
   app.post("/create-event", function (req, res) {
     var event = req.body;
     console.log(event);
-    EventM.create(event).then(function (results) {
-      res.end();
+
+    db.EventM.create(event).then(function (results) {
+      // res.sendFile(path.join(__dirname, "../public/html/event.html"));
     });
   });
-
-
 };
