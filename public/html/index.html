@@ -24,31 +24,34 @@
     <div class="divider"></div>
     <div class="navbar-fixed">
         <nav class="navbar-fixed nav-extended grey lighten-4">
-          <div class="navbar-fixed blue darken-2 my-navbar">
-            <a href="#" class="brand-logo center"><i class="material-icons" style="font-size: 50px">sync</i>Sports MeetUp</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="left hide-on-med-and-down">
-              <li><a href="current_event.html">Current Event</a></li>
-              <li><a href="Your_event.html">Your Event</a></li>
-              <li><a href="Create_event.html">Create Event</a></li>
-            </ul>
-          </div>
+            <div class="navbar-fixed blue darken-2 my-navbar">
+                <a href="#" class="brand-logo center"><i class="material-icons" style="font-size: 50px">sync</i>Sports
+                    MeetUp</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" class="flow-text">
+                    <li><a href="./all-events.html"> All Event </a></li>
+                    <li><a href="./user-events.html"> Your Events </a></li>
+                    <li><a href="./create-event.html"> Create Event </a></li>
+                </ul>
+            </div>
         </nav>
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="current_event.html">Current Event</a></li>
-          <li><a href="Your_event.html">Your Event</a></li>
-          <li><a href="Create_event.html">Create Event</a></li>
+            <li><a href="current_event.html">Current Event</a></li>
+            <li><a href="Your_event.html">Your Event</a></li>
+            <li><a href="Create_event.html">Create Event</a></li>
         </ul>
-      </div>
+    </div>
     <div class="divider"> </div>
 
     <!-- Description of our App for Users -->
     <div class="section">
-        <div class="row"> <div class="col s1"></div>
+        <div class="row">
+            <div class="col s1"></div>
             <div class="col s5">
                 <ul class="concept">
                     <li>
-                        <h4><i class="material-icons md-icon-36">device_hub</i> Don't wait...<br>Create you account now and
+                        <h4><i class="material-icons md-icon-36">device_hub</i> Don't wait...<br>Create you account now
+                            and
                             Sports_MeetUp!</h4>
                     </li>
                     <li>
@@ -85,17 +88,18 @@
                                         <br>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input id="email" type="email" class="validate">
-                                                <label for="email">Email</label>
+                                                <input id="login-email" type="email" class="validate">
+                                                <label for="login-email">Email</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input id="password" type="password" class="validate">
-                                                <label for="password">Password</label>
+                                                <input id="login-password" type="password" class="validate">
+                                                <label for="login-password">Password</label>
                                             </div>
                                         </div>
-                                        <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Connect</button>
+                                        <button class="btn waves-effect waves-light blue darken-2" type="submit" id="login-btn">Log
+                                            in</button>
                                         <br>
                                         <br>
                                         <a href="">
@@ -103,32 +107,32 @@
                                         </a>
                                     </div>
                                 </form>
-                                </div>
+                            </div>
                             <!-- Sign uo form -->
                             <div id="test2" class="col s10">
                                 <form>
                                     <div class="form-container">
                                         <br>
                                         <div class="row">
-                                            <div class="input-field col s6" >
-                                                <input id="last_name" type="text" class="validate">
-                                                <label for="last_name">First Name</label>
+                                            <div class="input-field col s6">
+                                                <input id="first-name" type="text" class="validate">
+                                                <label for="first-name">First Name</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input id="last_name" type="text" class="validate">
-                                                <label for="last_name">Last Name</label>
+                                                <input id="last-name" type="text" class="validate">
+                                                <label for="last-name">Last Name</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input id="email" type="email" class="validate">
-                                                <label for="email">Email</label>
+                                                <input id="signup-email" type="email" class="validate">
+                                                <label for="signup-email">Email</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input id="password" type="password" class="validate">
-                                                <label for="password">Password</label>
+                                                <input id="signup-password" type="password" class="validate">
+                                                <label for="signup-password">Password</label>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -137,7 +141,8 @@
                                                 <label for="password-confirm">Password Confirmation</label>
                                             </div>
                                         </div>
-                                        <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Submit</button>
+                                        <button class="btn waves-effect waves-light blue darken-2" type="submit" id="signup-btn">Sign
+                                            up</button>
                                     </div>
                                 </form>
                                 <br>
@@ -147,7 +152,9 @@
                 </div>
             </div>
             <br>
-        </div>    <footer>
+        </div>
+    </div>
+    <footer>
         <div class="footer blue darken-2">
             &copy; copyright 2018 - Sports_MeetUp
         </div>
@@ -162,6 +169,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="../js/index.js" type="text/javascript"></script>
 
 </body>
