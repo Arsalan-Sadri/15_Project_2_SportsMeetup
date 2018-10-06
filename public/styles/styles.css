@@ -10,24 +10,25 @@ body {
 }
 
 #scrollBar {
+
   width: 33.3%;
-  height:800px;
+  height: 800px;
   overflow: scroll;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 .section {
   height: 20%;
   padding: 0px;
-  margin:0px;
+  margin: 0px;
 }
 
 #logo {
   color: black
 }
 
-.carousel .carousel-item{
-  width:100%;
+.carousel .carousel-item {
+  width: 100%;
 }
 
 .brand-logo {

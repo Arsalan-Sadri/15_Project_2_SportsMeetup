@@ -46,25 +46,6 @@ h1{
   
  
   form {
-    width: 50%;
-    padding-left: 45px; }
-  
-  .form-group {
-    display: flex; }
-    .form-group .form-wrapper {
-      width: 50%; }
-      .form-group .form-wrapper:first-child {
-        margin-right: 20px; }
-  
-  .form-wrapper {
-    margin-bottom: 17px; }
-    .form-wrapper label {
-      margin-bottom: 9px;
-      display: block; }
-  
-  .form-control {
-    border: 1px solid #ccc;
-    display: block;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -166,3 +147,10 @@ h1{
   padding: 10px;
   margin-top: 10px;
 }
+
+label {
+  font-size: 16px;
+}
+/* input {
+  font-size: 20px;
+} */
