@@ -8,10 +8,10 @@ module.exports = function (app) {
     console.log(user);
 
     db.UserM.create(user).then(function (results) {
-      // res.sendFile(path.join(__dirname, "../public/html/event.html"));
+      res.json(results);
     });
   });
-  
+
   // creating an event
   app.post("/create-event", function (req, res) {
     var event = req.body;

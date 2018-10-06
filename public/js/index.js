@@ -1,16 +1,40 @@
 $(document).ready(function () {
 
-    $("#sign-upBtn").on("click", function (event) {
+    // code to handle user login
+    $("#login-btn").on("click", function (event) {
+        event.preventDefault();
+        var userCredential = {
+            email: $("#login-email").val().trim(),
+            password: $("#login-password").val().trim()
+        };
+
+        $.post("/login", userCredential)
+            .then(function (data) {
+
+            });
+    });
+
+
+    // code to get the user signed up
+    $("#signup-btn").on("click", function (event) {
         event.preventDefault();
         var user = {
             firstName: $("#first-name").val().trim(),
             lastName: $("#last-name").val().trim(),
-            email: $("#email-signup").val().trim(),
-            password: $("#password-signup").val().trim()
+            email: $("#signup-email").val().trim(),
+            password: $("#signup-password").val().trim()
         };
 
         $.post("/create-user", user)
-            .then(function (data) {});
+            .then(function (data) {
+                $("#body-wrapper").empty();
+                $("#body-wrapper").append("<h3> Congratulations! Your account has been successfully created. </h3>");
+                $("h3").css("position", "absolute");
+                $("h3").css("text-align", "center");
+                $("h3").css("top", "40%");
+                $("h3").css("text-shadow", "1px 4px #D7D2D1");
+                $("h3").css("left", "12%");
+            });
     });
 
 });
