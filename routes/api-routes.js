@@ -2,6 +2,10 @@ var db = require("../models");
 
 module.exports = function (app) {
 
+  // Grabbing user's events from DB and send it back to the client
+  
+
+
   // User log ins 
   app.post("/login", function (req, res) {
     var submittedCredential = req.body;

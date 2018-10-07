@@ -26,7 +26,6 @@ $(document).ready(function () {
 
         $.post("/create-user", user)
             .then(function (newUser) {
-
                 $("#body-wrapper").empty();
                 $("#body-wrapper").append("<h3> Congratulations!</h3>");
                 // $("#body-wrapper").append("<h3> Your account has been successfully created. </h3>");
@@ -35,11 +34,11 @@ $(document).ready(function () {
                 $("h3").css("top", "40%");
                 $("h3").css("text-shadow", "1px 4px #D7D2D1");
                 $("h3").css("left", "12%");
-
                 // Write the code to add user ID into My Events link
                 var url = "/user-events?user_id=" + newUser.id;
                 $("#my-events-link").attr("href", url);
-
+                url = "/create-event?user_id=" + newUser.id;
+                $("#create-event-link").attr("href", url);
             });
     });
 
