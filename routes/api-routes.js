@@ -2,16 +2,30 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-  // User log ins 
+  // Code to handle user login 
   app.post("/login", function (req, res) {
     var submittedCredential = req.body;
     // comparing client submitted credentials with that of DB
     db.UserM.findOne({
       where: {
-        id: submittedCredential.email
+        email: submittedCredential.email
       }
-    }).then(function (test) {
-      res.json(test);
+    }).then(function (email) {
+      // If email is valid
+      if (email) {
+        db.UserM.findOne({
+          where: {
+            password: submittedCredential.password
+          }
+        }).then(function (password) {
+          // If password is valid too
+          if (password) {
+            res.send("success");
+
+          } else res.send("password faild"); // No password
+        });
+
+      } else res.send("email failed"); // No such an email
     });
 
   });
@@ -53,9 +67,20 @@ module.exports = function (app) {
     if (req.query.loc) {
       query.city = req.query.loc;
     }
-    
+
     db.EventM.findAll({
       where: query
+    }).then(function (allEvents) {
+      res.json(allEvents);
+    });
+  });
+
+  // Delete a specific user's post
+  app.delete("/api/delete-event/:id", function (req, res) {
+    db.EventM.destroy({
+      where: {
+        id: req.params.id
+      }
     }).then(function (allEvents) {
       res.json(allEvents);
     });
