@@ -35,10 +35,10 @@ $(document).ready(function () {
                 $("h3").css("text-shadow", "1px 4px #D7D2D1");
                 $("h3").css("left", "12%");
                 // Write the code to add user ID into My Events link
-                var url = "/user-events?user_id=" + newUser.id;
-                $("#my-events-link").attr("href", url);
-                url = "/create-event?user_id=" + newUser.id;
-                $("#create-event-link").attr("href", url);
+                var href = "/my-events?user_id=" + newUser.id;
+                $("#my-events-link").attr("href", href);
+                href = "/create-event?user_id=" + newUser.id;
+                $("#create-event-link").attr("href", href);
             });
     });
 
