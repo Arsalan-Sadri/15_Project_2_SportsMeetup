@@ -2,21 +2,21 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/styles.css">
-
-    <title>All Events</title>
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
-
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Sport Meetup</title>
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="divider"></div>
     <div class="navbar-fixed">
         <nav class="navbar-fixed nav-extended grey lighten-4">
@@ -59,6 +59,81 @@
 
     <div class="row">
         <div id="scrollBar" class="col s4">
+=======
+    <!-- Navbar -->
+    <div class="navbar-fixed">
+        <nav class="navbar-fixed nav-extended grey lighten-4">
+            <div class="navbar-fixed blue darken-2 my-navbar">
+                <a href="#" class="brand-logo right">Sports MeetUp</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="" id="all-events-link"> All Events </a></li>
+                    <li><a href="" id="my-events-link"> My Events </a></li>
+                    <li><a href="" id="create-event-link"> Create Event </a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href=""> All Event </a></li>
+            <li><a href=""> My Events </a></li>
+            <li><a href=""> Create Event </a></li>
+        </ul>
+    </div>
+
+    <!-- <div class="divider"> </div> -->
+    <div class="row" id="body-wrapper">
+
+        <div class="col s6">
+            <form>
+                <div class="form-container">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="search-box" class="validate">
+                            <label for="login-email">City or Zip code</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button class="btn waves-effect waves-light blue darken-2" id="search">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <!-- MAP GOES HERE -->
+
+        <div id="table-wrapper">
+            <div class="row">
+                <div class="col s12">
+                    <h2 id="table-title">Events</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <table id="my-table">
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Spots available</th>
+                            <th>Street</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip code</th>
+                            <!-- <th>Created by</th> -->
+                            <!-- <th>Delete</th>
+                            <th>Modify</th> -->
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div id="scrollBar" class="col s4">
+>>>>>>> arsalan
             <div class="divider"></div>
             <div class="section">
                 <div class="row">
@@ -133,31 +208,23 @@
         </div>
         <div class="col s8">
             <h1 class="center">map</h1>
-        </div>
-    </div>
+        </div> -->
+    </div> <!-- div id="body-wrapper1" -->
 
-    </div>
-    <div class="divider"></div>
+    <!-- <div class="divider"></div> -->
     <footer>
         <div class="footer blue darken-2">
             &copy; copyright 2018 - Sports_MeetUp
         </div>
     </footer>
 
-
-
-
-
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB"
         crossorigin="anonymous"></script>
-
-
-
-
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../js/all-events.js" type="text/javascript"></script>
 
 </body>
 

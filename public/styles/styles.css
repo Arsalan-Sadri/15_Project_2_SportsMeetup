@@ -23,6 +23,20 @@ body {
   margin: 0px;
 }
 
+<<<<<<< HEAD
+=======
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: lightcoral;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+>>>>>>> arsalan
 #logo {
   color: black
 }
@@ -45,6 +59,7 @@ body {
   margin-right: 30px;
 }
 
+<<<<<<< HEAD
 .footer {
   position: absolute;
   /* left: 0; */
@@ -129,3 +144,43 @@ button {
       padding-right: 15px;
       padding-left: 15px; } }
   
+=======
+.title-row {
+  margin: grey;
+}
+
+/* Below is the styling applied to my-event.html */
+#body-wrapper {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#table-title {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+th {
+  font-size: 20px;
+}
+
+td {
+  font-size: 15px;
+}
+
+td,
+th {
+  border: 0px;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+>>>>>>> arsalan
