@@ -1,3 +1,34 @@
+var map;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('mapDiv'), {
+        zoom: 11,
+        center: {
+            lat: 33.684566,
+            lng: -117.826508
+        }
+    });
+}
+
+function geocodeAddress(address) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        'address': address
+    }, function (results, status) {
+        if (status === 'OK') {
+            // .geometry.location property contains a LatLng object, refering the place 
+            // we searched for. Retrieve it and assign it to the map's center 
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+
 $(document).ready(function () {
 
     // updating the links in the navbar once page is loaded 
@@ -32,6 +63,11 @@ $(document).ready(function () {
     function getAllEvents(loc) {
         var locParam = "?loc=" + loc;
         $.get("/api/all-events" + locParam, function (allEvents) {
+
+            for (var i = 0; i < allEvents.length; i++) {
+                geocodeAddress(allEvents[i].city);
+            }
+
             $("#table-wrapper tbody").empty();
             displayTable(allEvents);
             $("#table-wrapper").show();
