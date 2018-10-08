@@ -22,14 +22,8 @@ body {
   margin: 0px;
 }
 
-/* .row {
-  margin:0;
-} */
-
-
 .footer {
   position: absolute;
-  /* left: 0; */
   bottom: 0;
   width: 100%;
   background-color: lightcoral;
@@ -65,7 +59,7 @@ body {
   margin: grey;
 }
 
-/* Below is styling applied to my-event.html */
+/* Below is the styling applied to my-event.html */
 #body-wrapper1 {
   margin: 100px;
 }
@@ -78,7 +72,14 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+th {
   font-size: 20px;
+}
+
+td {
+  font-size: 15px;
 }
 
 td,

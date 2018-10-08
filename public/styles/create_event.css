@@ -26,10 +26,6 @@
   background-color: #eceff1;
 }
 
-#textarea2 {
-  /* margin:10px; */
-}
-
 h1 {
   text-align: center;
 }
@@ -80,16 +76,12 @@ a:hover {
 }
 
 .wrapper {
-  /* min-height: 100vh; */
   background-size: cover;
   background-repeat: no-repeat;
-  /* display: flex; */
   align-items: center;
 }
 
 .inner {
-  /* min-width: 850px; */
-  /* margin: auto; */
   padding-top: 40px;
   padding-bottom: 40px;
   background: url("../../images/registration_2.jpg");
