@@ -72,18 +72,18 @@ body {
 
 #table-title {
   text-align: center;
-  text-shadow: 1px 6px #D7D2D1;
 }
 
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 0px;
   text-align: left;
   padding: 8px;
 }

@@ -39,6 +39,8 @@ $(document).ready(function () {
       tr += "<td>" + allEvents[i].state + "</td>";
       tr += "<td>" + allEvents[i].zipCode + "</td>";
       tr += "<td>" + allEvents[i].UserM.firstName + "</td>";
+      tr += "<td>" + '<a href="http://www.google.com">Delete</a>' + "</td>";
+      tr += "<td>" + '<a href="http://www.google.com">Modify</a>' + "</td>";
       tr += "</tr>";
 
       $("#my-table").append(tr);
