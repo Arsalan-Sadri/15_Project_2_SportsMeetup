@@ -64,3 +64,30 @@ body {
 .title-row {
   margin: grey;
 }
+
+/* Below is styling applied to my-event.html */
+#body-wrapper1 {
+  margin: 100px;
+}
+
+#table-title {
+  text-align: center;
+  text-shadow: 1px 6px #D7D2D1;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
