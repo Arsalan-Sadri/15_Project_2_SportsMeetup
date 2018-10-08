@@ -92,3 +92,7 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+#mapDiv {
+  height: 600px;
+}
