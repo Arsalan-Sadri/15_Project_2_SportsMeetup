@@ -32,6 +32,7 @@ $(document).ready(function () {
     function getAllEvents(loc) {
         var locParam = "?loc=" + loc;
         $.get("/api/all-events" + locParam, function (allEvents) {
+            $("#table-wrapper tbody").empty();
             displayTable(allEvents);
             $("#table-wrapper").show();
         });
@@ -39,6 +40,7 @@ $(document).ready(function () {
 
     // Code to add events into the page in a tabular formats
     function displayTable(allEvents) {
+        tb = "<tbody>";
         for (var i = 0; i < allEvents.length; i++) {
 
             var tr = "<tr>";
@@ -51,12 +53,15 @@ $(document).ready(function () {
             tr += "<td>" + allEvents[i].state + "</td>";
             tr += "<td>" + allEvents[i].zipCode + "</td>";
             // tr += "<td>" + allEvents[i].UserM.firstName + "</td>";
-            tr += "<td>" + '<a href="http://www.google.com">Delete</a>' + "</td>";
-            tr += "<td>" + '<a href="http://www.google.com">Modify</a>' + "</td>";
+            // tr += "<td>" + '<a href="http://www.google.com">Delete</a>' + "</td>";
+            // tr += "<td>" + '<a href="http://www.google.com">Modify</a>' + "</td>";
             tr += "</tr>";
 
-            $("#my-table").append(tr);
+            tb += tr;
+
         }
+        tb += "</tbody>";
+        $("#my-table").append(tb);
     }
 
 });
