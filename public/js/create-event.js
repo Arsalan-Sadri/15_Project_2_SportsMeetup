@@ -13,9 +13,15 @@ $(document).ready(function () {
             spots: $("#spots").val().trim()
         };
 
+        // extracting user_id from the URL in the th browser address bar
+        var url = window.location.search;
+        if (url.indexOf("?user_id=") !== -1) var userId = url.split("=")[1];
+        // 
+        newEvent.UserMId = userId;
+
         $.post("/create-event", newEvent)
             .then(function (data) {
-
+                // window.location.href = "https://www.google.com/";
             });
     });
 

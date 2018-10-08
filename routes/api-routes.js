@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function (app) {
 
   // Grabbing user's events from DB and send it back to the client
-  
+
 
 
   // User log ins 
@@ -31,11 +31,10 @@ module.exports = function (app) {
 
   // creating an event
   app.post("/create-event", function (req, res) {
-    var event = req.body;
-    console.log(event);
-
-    db.EventM.create(event).then(function (results) {
-      // res.sendFile(path.join(__dirname, "../public/html/event.html"));
+    var newEvent = req.body;
+    console.log("new event::: " + newEvent);
+    db.EventM.create(newEvent).then(function (addedEvent) {
+      res.json(addedEvent);
     });
   });
 };
