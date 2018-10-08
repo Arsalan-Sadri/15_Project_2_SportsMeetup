@@ -37,11 +37,18 @@ $(document).ready(function () {
                 msgWrapper.css("left", "30%");
                 $("#body-wrapper").append(msgWrapper);
 
-                // Updating navbar links after receving newly created user
-                var href = "/my-events?user_id=" + newUser.id;
+                // Updating navbar links after sign up and having received the newly-created user from the server
+                var href;
+
+                href = "/my-events?user_id=" + newUser.id;
                 $("#my-events-link").attr("href", href);
+
                 href = "/create-event?user_id=" + newUser.id;
                 $("#create-event-link").attr("href", href);
+
+                href = "/all-events?user_id=" + newUser.id;
+                $("#all-events-link").attr("href", href);
+
             });
     });
 

@@ -4,15 +4,22 @@ $(document).ready(function () {
   var url = window.location.search;
   var userId;
   if (url.indexOf("?user_id=") !== -1) userId = url.split("=")[1];
-  var href = "/my-events?user_id=" + userId;
+
+  var href;
+
+  href = "/my-events?user_id=" + userId;
   $("#my-events-link").attr("href", href);
+
   href = "/create-event?user_id=" + userId;
   $("#create-event-link").attr("href", href);
 
-  // Grabbing all events from DB
-  getEvents(userId);
+  href = "/all-events?user_id=" + newUser.id;
+  $("#all-events-link").attr("href", href);
 
-  function getEvents(userId) {
+  // Grabbing all events from DB
+  getUserEvents(userId);
+
+  function getUserEvents(userId) {
     // userId = userId || "";
     // if (userId) {
     //   userIdParam = "?user_id=" + userId;

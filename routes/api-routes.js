@@ -46,4 +46,19 @@ module.exports = function (app) {
     });
   });
 
+  // Grab all events from DB
+  app.get("/api/all-events", function (req, res) {
+    // code to grab all events based on zipcode or city name
+    // **************************
+    
+    // **************************
+
+    db.EventM.findAll({
+      where: query,
+      include: [db.UserM]
+    }).then(function (allEvents) {
+      res.json(allEvents);
+    });
+  });
+
 };
