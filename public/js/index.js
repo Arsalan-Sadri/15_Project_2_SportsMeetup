@@ -9,12 +9,48 @@ $(document).ready(function () {
         };
         $.post("/login", userCredential)
             .then(function (data) {
-
+                switch (data) {
+                    case "email failed":
+                        $("#body-wrapper").empty();
+                        var msgWrapper = $("<div>");
+                        msgWrapper.append("<h3> No such an email! </h3>")
+                        msgWrapper.append("<h3> Please try again later </h3>");
+                        msgWrapper.css("text-shadow", "1px 6px #D7D2D1");
+                        msgWrapper.css("text-align", "center");
+                        msgWrapper.css("position", "absolute");
+                        msgWrapper.css("top", "30%");
+                        msgWrapper.css("left", "30%");
+                        $("#body-wrapper").append(msgWrapper);
+                        break;
+                    case "password faild":
+                        $("#body-wrapper").empty();
+                        var msgWrapper = $("<div>");
+                        msgWrapper.append("<h3> No such a password! </h3>")
+                        msgWrapper.append("<h3> Please try again later </h3>");
+                        msgWrapper.css("text-shadow", "1px 6px #D7D2D1");
+                        msgWrapper.css("text-align", "center");
+                        msgWrapper.css("position", "absolute");
+                        msgWrapper.css("top", "30%");
+                        msgWrapper.css("left", "30%");
+                        $("#body-wrapper").append(msgWrapper);
+                        break;
+                    case "success":
+                        $("#body-wrapper").empty();
+                        var msgWrapper = $("<div>");
+                        msgWrapper.append("<h3> Login successful! </h3>");
+                        msgWrapper.css("text-shadow", "1px 6px #D7D2D1");
+                        msgWrapper.css("text-align", "center");
+                        msgWrapper.css("position", "absolute");
+                        msgWrapper.css("top", "30%");
+                        msgWrapper.css("left", "30%");
+                        $("#body-wrapper").append(msgWrapper);
+                        break;
+                }
             });
     });
 
 
-    // code to get the user signed up
+    // Code to handle user signup
     $("#signup-btn").on("click", function (event) {
         event.preventDefault();
         var user = {
