@@ -36,20 +36,40 @@ $(document).ready(function () {
   var url = window.location.search;
   var userId;
   if (url.indexOf("?user_id=") !== -1) userId = url.split("=")[1];
+  if (url.indexOf("?event_id=") !== -1) eventId = url.split("=")[1];
 
   var href;
 
-  href = "/my-events?user_id=" + userId;
-  $("#my-events-link").attr("href", href);
+  if (userId) {
+    href = "/my-events?user_id=" + userId;
+    $("#my-events-link").attr("href", href);
 
-  href = "/create-event?user_id=" + userId;
-  $("#create-event-link").attr("href", href);
+    href = "/create-event?user_id=" + userId;
+    $("#create-event-link").attr("href", href);
 
-  href = "/all-events?user_id=" + userId;
-  $("#all-events-link").attr("href", href);
+    href = "/all-events?user_id=" + userId;
+    $("#all-events-link").attr("href", href);
 
-  // Grabbing all events from DB
-  getUserEvents(userId);
+    // Grabbing all events from DB
+    getUserEvents(userId);
+  }
+
+  if (eventId) {
+
+    deleteEvent(eventId);
+  }
+
+  function deleteEvent(eventId) {
+
+    $.ajax({
+        method: "DELETE",
+        url: "/api/delete-event/" + eventId
+      })
+      .then(function () {
+        getUserEvents(userId)
+      });
+  }
+
 
   function getUserEvents(userId) {
     // userId = userId || "";
@@ -83,8 +103,8 @@ $(document).ready(function () {
       tr += "<td>" + allEvents[i].state + "</td>";
       tr += "<td>" + allEvents[i].zipCode + "</td>";
       tr += "<td>" + allEvents[i].UserM.firstName + "</td>";
-      tr += "<td>" + '<a href="http://www.google.com">Delete</a>' + "</td>";
-      tr += "<td>" + '<a href="http://www.google.com">Modify</a>' + "</td>";
+      tr += "<td>" + "<a href=" + "/delete-event?event_id=" + allEvents[i].id + "&user_id=" + allEvents[i].UserM.id + ">Delete</a>" + "</td>";
+      tr += "<td>" + '<a href="/modify-event?event_id="' + allEvents[i].id + '>Modify</a>' + "</td>";
       tr += "</tr>";
 
       $("#my-table").append(tr);

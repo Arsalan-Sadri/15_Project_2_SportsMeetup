@@ -19,6 +19,10 @@ module.exports = function (app) {
 
   app.get("/all-events", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/html/all-events.html"));
+  });
+
+  app.get("/delete-event", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/delete-event.html"));
   })
 
 };

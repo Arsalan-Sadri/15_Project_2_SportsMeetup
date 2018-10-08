@@ -75,4 +75,15 @@ module.exports = function (app) {
     });
   });
 
+  // Delete a specific user's post
+  app.delete("/api/delete-event/:id", function (req, res) {
+    db.EventM.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (allEvents) {
+      res.json(allEvents);
+    });
+  });
+
 };
