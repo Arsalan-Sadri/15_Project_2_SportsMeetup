@@ -9,13 +9,14 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/styles.css">
     <title>Sport Meetup</title>
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
 </head>
 
 <body>
 
+    <!-- Navbar -->
     <div class="navbar-fixed">
         <nav class="navbar-fixed nav-extended grey lighten-4">
             <div class="navbar-fixed blue darken-2 my-navbar">
@@ -35,8 +36,13 @@
         </ul>
     </div>
 
-    <!-- <div class="divider"> </div> -->
+    <br>
+    <br>
+
     <div class="row" id="body-wrapper">
+
+        <div id="mapDiv"></div>
+
         <h2 id="table-title">Events</h2>
         <br>
         <table id="my-table">
@@ -70,6 +76,9 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../js/my-events.js" type="text/javascript"></script>
+    <!---------------- GOOGLE MAP API ---------------->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxxASExfHJ3E3zseHXZoiRc53dIAcJjYI&callback=initMap"
+        type="text/javascript"></script>
 </body>
 
 </html>

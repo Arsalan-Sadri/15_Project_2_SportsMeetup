@@ -150,6 +150,7 @@ button {
 }
 
 /* Below is the styling applied to my-event.html */
+
 #body-wrapper {
   margin-left: 100px;
   margin-right: 100px;
@@ -182,5 +183,12 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+<<<<<<< HEAD
+>>>>>>> arsalan
+=======
+
+#mapDiv {
+  height: 600px;
 }
 >>>>>>> arsalan
