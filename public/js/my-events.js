@@ -13,7 +13,7 @@ $(document).ready(function () {
   href = "/create-event?user_id=" + userId;
   $("#create-event-link").attr("href", href);
 
-  href = "/all-events?user_id=" + newUser.id;
+  href = "/all-events?user_id=" + userId;
   $("#all-events-link").attr("href", href);
 
   // Grabbing all events from DB
@@ -33,7 +33,6 @@ $(document).ready(function () {
 
   // Code to add events into the page in a tabular formats
   function displayTable(allEvents) {
-    var bodyWrapper = $("#body-wrapper1");
     for (var i = 0; i < allEvents.length; i++) {
 
       var tr = "<tr>";

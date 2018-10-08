@@ -13,21 +13,32 @@ $(document).ready(function () {
     href = "/create-event?user_id=" + userId;
     $("#create-event-link").attr("href", href);
 
-    href = "/all-events?user_id=" + newUser.id;
+    href = "/all-events?user_id=" + userId;
     $("#all-events-link").attr("href", href);
 
-    // Grabbing all events from DB
-    getAllEvents(userId);
+    // Hiding the table first
+    $("#table-wrapper").hide();
 
-    function getAllEvents(userId) {
-        $.get("/api/all-events", function (allEvents) {
+    // Search button handler
+    $("#search").on("click", function (e) {
+        e.preventDefault();
+
+        var loc = $("#search-box").val().trim();
+        // Grabbing all events from DB
+        getAllEvents(loc);
+    });
+
+
+    function getAllEvents(loc) {
+        var locParam = "?loc=" + loc;
+        $.get("/api/all-events" + locParam, function (allEvents) {
             displayTable(allEvents);
+            $("#table-wrapper").show();
         });
     }
 
     // Code to add events into the page in a tabular formats
     function displayTable(allEvents) {
-        var bodyWrapper = $("#body-wrapper1");
         for (var i = 0; i < allEvents.length; i++) {
 
             var tr = "<tr>";
@@ -39,7 +50,7 @@ $(document).ready(function () {
             tr += "<td>" + allEvents[i].city + "</td>";
             tr += "<td>" + allEvents[i].state + "</td>";
             tr += "<td>" + allEvents[i].zipCode + "</td>";
-            tr += "<td>" + allEvents[i].UserM.firstName + "</td>";
+            // tr += "<td>" + allEvents[i].UserM.firstName + "</td>";
             tr += "<td>" + '<a href="http://www.google.com">Delete</a>' + "</td>";
             tr += "<td>" + '<a href="http://www.google.com">Modify</a>' + "</td>";
             tr += "</tr>";
@@ -47,7 +58,5 @@ $(document).ready(function () {
             $("#my-table").append(tr);
         }
     }
-
-
 
 });

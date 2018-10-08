@@ -3,7 +3,6 @@
 }
 
 body {
-
   position: relative;
   min-height: 100vh;
 }
@@ -60,8 +59,9 @@ body {
 }
 
 /* Below is the styling applied to my-event.html */
-#body-wrapper1 {
-  margin: 100px;
+#body-wrapper {
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 #table-title {
