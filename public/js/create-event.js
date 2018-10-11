@@ -5,14 +5,20 @@ $(document).ready(function () {
 
     if (url.indexOf("?user_id=") !== -1) var userId = url.split("=")[1];
 
-    var href = "/my-events?user_id=" + userId;
+    var href;
+
+    href = "/my-events?user_id=" + userId;
     $("#my-events-link").attr("href", href);
+
     href = "/create-event?user_id=" + userId;
     $("#create-event-link").attr("href", href);
 
+    href = "/all-events?user_id=" + userId;
+    $("#all-events-link").attr("href", href);
+
     // Handling submit button 
-    $("#submit").on("click", function (event) {
-        event.preventDefault();
+    $("#submit").on("click", function (e) {
+        e.preventDefault();
         var newEvent = {
             name: $("#event-name").val().trim(),
             description: $("#description").val().trim(),
@@ -32,7 +38,7 @@ $(document).ready(function () {
 
         $.post("/create-event", newEvent)
             .then(function (data) {
-                window.location.href="/my-events?user_id=" + userId;
+                window.location.href = "/my-events?user_id=" + userId;
             });
     });
 
